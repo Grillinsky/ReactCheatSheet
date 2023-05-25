@@ -1,13 +1,14 @@
 import Nota from "./components/Nota.jsx";
+import User from "./components/Usuario.jsx";
 import "./App.css";
 
-function App() {
-  return (
-    <>
-      <Nota />
-    </>
-  );
-}
+// function App() {
+//   return (
+//     <>
+//       <Nota />
+//     </>
+//   );
+// }
 
 // function App() {
 //   const [name, setName] = useState("Roberto");
@@ -56,4 +57,11 @@ function App() {
 //     </>
 //   );
 // }
+function App() {
+  return (
+    <>
+      <User />
+    </>
+  );
+}
 export default App;
