@@ -10,6 +10,7 @@ import "./App.css";
 //   );
 // }
 
+// USING EVENT LISTENERS
 // function App() {
 //   const [name, setName] = useState("Roberto");
 //   const [likes, setLikes] = useState(0);
@@ -57,6 +58,35 @@ import "./App.css";
 //     </>
 //   );
 // }
+
+// USING REDUCE
+// const cart = [
+//   {
+//     id: 1,
+//     name: "manzana",
+//     cantidad: 1,
+//   },
+//   {
+//     id: 2,
+//     name: "banana",
+//     cantidad: 3,
+//   },
+//   {
+//     id: 3,
+//     name: "pera",
+//     cantidad: 10,
+//   },
+// ];
+// const cartFiltrado = cart.filter(function (products) {
+//   return products.cantidad < 5;
+// });
+
+// const numeros = [1, 2, 3, 4, 5, 6, 7, -10];
+// const resultadoFunal = numeros.reduce(function (acc, valorActual) {
+//   return acc + valorActual;
+// }, 0);
+
+// console.log(resultadoFunal);
 function App() {
   return (
     <>
