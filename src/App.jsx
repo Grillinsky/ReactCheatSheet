@@ -59,7 +59,7 @@ import "./App.css";
 //   );
 // }
 
-// USING REDUCE
+// USING FILTER &  REDUCE
 // const cart = [
 //   {
 //     id: 1,
