@@ -1,7 +1,12 @@
 import Nota from "./components/Nota.jsx";
 import User from "./components/Usuario.jsx";
+import Home from "./components/Home.jsx";
+import Nav from "./components/Nav.jsx";
+import Error404 from "./components/Error404.jsx";
+import Product from "./components/Product.jsx";
 import "./App.css";
-
+import { Routes, Route, Link, Navigate, redirect } from "react-router-dom";
+import Contact from "./components/Contact.jsx";
 // function App() {
 //   return (
 //     <>
@@ -90,7 +95,14 @@ import "./App.css";
 function App() {
   return (
     <>
-      <User />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/contacto" element={<Navigate replace to="/contact/" />} />
+        <Route path="/products/:id" element={<Product />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
     </>
   );
 }
