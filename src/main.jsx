@@ -10,18 +10,15 @@ import { Provider } from "react-redux";
 // const initialState = [];
 
 function userReducer(state = [], action) {
-  switch (
-    action.type // Action pertinente
-  ) {
+  switch (action.type) {
     case "SET_USER":
       return [...state, action.payload];
-    // case "DELETE_USER":
-    //   return [...state.filter((user) => user.id !== action.payload)];
     default:
       return state;
   }
-}
-
+} // TODO:
+// case "DELETE_USER":
+//   return [...state.filter((user) => user.id !== action.payload)];
 const store = configureStore({
   reducer: {
     users: userReducer,

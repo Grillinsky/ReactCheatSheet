@@ -1,14 +1,44 @@
-import Nota from "./components/Nota.jsx";
-// import User from "./components/Usuario.jsx";
-import Home from "./components/Home.jsx";
-import Nav from "./components/Nav.jsx";
-import Error404 from "./components/Error404.jsx";
-import Product from "./components/Product.jsx";
-import "./App.css";
-import { Routes, Route, Link, Navigate, redirect } from "react-router-dom";
-import Contact from "./components/Contact.jsx";
-import User from "./components/User";
+// import Nota from "./components/Nota.jsx";
+// // import User from "./components/Usuario.jsx";
+// import Home from "./components/Home.jsx";
+// import Nav from "./components/Nav.jsx";
+// import Error404 from "./components/Error404.jsx";
+// import Product from "./components/Product.jsx";
+// import { Routes, Route, Link, Navigate, redirect } from "react-router-dom";
+// import Contact from "./components/Contact.jsx";
 import { useSelector, useDispatch } from "react-redux";
+import User from "./components/User";
+import "./App.css";
+
+function App() {
+  const dispatch = useDispatch();
+  const { users } = useSelector((state) => state);
+  return (
+    <>
+      <h1>Probando redux </h1>
+      <ul>
+        {users.map((user, index) => {
+          <User name={user} key={index} />;
+        })}
+      </ul>
+      <div>
+        <button onClick={() => dispatch({ type: "SET_USER", payload: "Leia" })}>
+          Agregar Leia
+        </button>
+        <button
+          onClick={() => dispatch({ type: "SET_USER", payload: "Eloisa" })}
+        >
+          Agregar Eloisa
+        </button>
+        <button
+          onClick={() => dispatch({ type: "SET_USER", payload: "Bruh Moment" })}
+        >
+          Agregar Memes
+        </button>
+      </div>
+    </>
+  );
+}
 // function App() {
 //   return (
 //     <>
@@ -112,33 +142,4 @@ import { useSelector, useDispatch } from "react-redux";
 // }
 // export default App;
 
-function App() {
-  const dispatch = useDispatch();
-  const { users } = useSelector((state) => state);
-  return (
-    <>
-      <h1>Probando redux </h1>
-      <ul>
-        {users.map((user, index) => {
-          <User name={user} key={index} />;
-        })}
-      </ul>
-      <div>
-        <button onClick={() => dispatch({ type: "SET_USER", payload: "Leia" })}>
-          Agregar Leia
-        </button>
-        <button
-          onClick={() => dispatch({ type: "SET_USER", payload: "Eloisa" })}
-        >
-          Agregar Eloisa
-        </button>
-        <button
-          onClick={() => dispatch({ type: "SET_USER", payload: "Bruh Moment" })}
-        >
-          Agregar Memes
-        </button>
-      </div>
-    </>
-  );
-}
 export default App;
