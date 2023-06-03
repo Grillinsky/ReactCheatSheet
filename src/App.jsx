@@ -8,37 +8,62 @@
 // import Contact from "./components/Contact.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import User from "./components/User";
+import usersSlice from "./redux/userSlice";
+import { agregarUsuario } from "./redux/userSlice";
 import "./App.css";
 
+/// USE SLICE
 function App() {
   const dispatch = useDispatch();
-  const { users } = useSelector((state) => state);
+  const users = useSelector((state) => state.users);
+  // console.log(usersSlice.actions.agregarUsuario());
   return (
     <>
-      <h1>Probando redux </h1>
-      <ul>
-        {users.map((user, index) => {
-          <User name={user} key={index} />;
-        })}
-      </ul>
+      <h1>Probando redux</h1>
+      {users.map((user) => (
+        <ul>{user}</ul>
+      ))}
+
       <div>
-        <button onClick={() => dispatch({ type: "SET_USER", payload: "Leia" })}>
-          Agregar Leia
+        <button onClick={() => dispatch(agregarUsuario("elo"))}>
+          Agregar elo
         </button>
-        <button
-          onClick={() => dispatch({ type: "SET_USER", payload: "Eloisa" })}
-        >
-          Agregar Eloisa
-        </button>
-        <button
-          onClick={() => dispatch({ type: "SET_USER", payload: "Bruh Moment" })}
-        >
-          Agregar Memes
-        </button>
+        <button>Agregar MArio</button>
       </div>
     </>
   );
 }
+
+/////PROBANDO REDUX
+// function App() {
+//   const dispatch = useDispatch();
+//   const { users } = useSelector((state) => state);
+//   return (
+//     <>
+//       <h1>Probando redux </h1>
+//       <ul>
+//         {users.map((user, index) => {
+//           <User name={user} key={index} />;
+//         })}
+//       </ul>
+//       <div>
+//         <button onClick={() => dispatch({ type: "SET_USER", payload: "Leia" })}>
+//           Agregar Leia
+//         </button>
+//         <button
+//           onClick={() => dispatch({ type: "SET_USER", payload: "Eloisa" })}
+//         >
+//           Agregar Eloisa
+//         </button>
+//         <button
+//           onClick={() => dispatch({ type: "SET_USER", payload: "Bruh Moment" })}
+//         >
+//           Agregar Memes
+//         </button>
+//       </div>
+//     </>
+//   );
+// }
 // function App() {
 //   return (
 //     <>

@@ -7,21 +7,22 @@ import "./index.css";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 
-// const initialState = [];
+// // const initialState = [];
 
-function userReducer(state = [], action) {
-  switch (action.type) {
-    case "SET_USER":
-      return [...state, action.payload];
-    default:
-      return state;
-  }
-} // TODO:
-// case "DELETE_USER":
-//   return [...state.filter((user) => user.id !== action.payload)];
+// function userReducer(state = [], action) {
+//   switch (action.type) {
+//     case "SET_USER":
+//       return [...state, action.payload];
+//     default:
+//       return state;
+//   }
+// } // TODO:
+// // case "DELETE_USER":
+// //   return [...state.filter((user) => user.id !== action.payload)];
+import usersReducer from "./redux/userSlice.js";
 const store = configureStore({
   reducer: {
-    users: userReducer,
+    users: usersReducer,
   },
 });
 
